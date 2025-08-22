@@ -84,7 +84,7 @@ const CreateGroupPage = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-zinc-200">
+    <div className="w-full h-screen bg-zinc-100">
       <div className="w-full h-[10vh] px-2 md:px-4 flex items-center justify-between border-b border-zinc-400">
         <i
           onClick={() => navigate("/")}
@@ -112,14 +112,14 @@ const CreateGroupPage = () => {
             placeholder="Enter group name"
             className="w-full px-2 py-2 rounded-md text-base font-medium outline-0 bg-transparent border border-zinc-400"
           />
-          <div className="w-full px-2 rounded-md border border-zinc-400 bg-white flex gap-2 items-center">
+          <div className="w-full px-2 rounded-md border border-zinc-400 flex gap-2 items-center">
             <i className="ri-search-line text-[1.2rem]"></i>
             <input
               onChange={(e) => setSearch(e.target.value)}
               value={search}
               type="text"
               placeholder="Search . . ."
-              className="w-full py-2 outline-none text-base"
+              className="w-full py-2 outline-none text-base bg-transparent"
             />
             {search ? (
               <i
@@ -159,7 +159,7 @@ const CreateGroupPage = () => {
                 ))
               : ""}
           </div>
-          <div className="w-full max-h-[20vh] bg-zinc-200 overflow-x-hidden overflow-y-auto">
+          <div className="w-full max-h-[20vh] bg-zinc-100 overflow-x-hidden overflow-y-auto">
             {!loading ? (
               users.length > 0 &&
               users.map((user) => (

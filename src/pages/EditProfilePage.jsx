@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { asyncEditProfile } from "../store/actions/userActions";
+import LoadingPage from "../pages/LoadingPage"
 
 const EditProfilePage = () => {
   const navigate = useNavigate();
@@ -14,7 +15,11 @@ const EditProfilePage = () => {
   const [fullName, setFullName] = useState(user && user.fullName);
   const [email, setEmail] = useState(user && user.email);
   const [gender, setGender] = useState(user && user.gender);
-  const [dateOfBirth, setDateOfBirth] = useState(user && user.dateOfBirth);
+  const [dateOfBirth, setDateOfBirth] = useState(
+    user && user.dateOfBirth
+      ? new Date(user.dateOfBirth).toISOString().split("T")[0]
+      : ""
+  );
   const [profileImage, setProfileImage] = useState(
     user ? user.profileImage : ""
   );
@@ -34,8 +39,8 @@ const EditProfilePage = () => {
     navigate("/profile");
   };
 
-  return (
-    <div className="w-full h-screen bg-zinc-200">
+  return user? (
+    <div className="w-full h-screen bg-zinc-100">
       <div className="w-full h-[10vh] px-2 md:px-4 flex items-center justify-between border-b border-zinc-400">
         <i
           onClick={() => navigate("/profile")}
@@ -88,7 +93,7 @@ const EditProfilePage = () => {
                 value={fullName}
                 type="text"
                 placeholder="Enter full name"
-                className="w-full px-2 py-2 rounded-md bg-zinc-100 border border-zinc-400 outline-none "
+                className="w-full px-2 py-2 rounded-md border border-zinc-400 outline-none "
               />
             </div>
             <div>
@@ -103,7 +108,7 @@ const EditProfilePage = () => {
                 value={email}
                 type="email"
                 placeholder="Enter email"
-                className="w-full px-2 py-2 rounded-md bg-zinc-100 border border-zinc-400 outline-none "
+                className="w-full px-2 py-2 rounded-md border border-zinc-400 outline-none "
               />
             </div>
             <div>
@@ -118,7 +123,7 @@ const EditProfilePage = () => {
                 value={dateOfBirth}
                 type="date"
                 placeholder="Enter Date of Birth"
-                className="w-full px-2 py-2 rounded-md bg-zinc-100 border border-zinc-400 outline-none "
+                className="w-full px-2 py-2 rounded-md border border-zinc-400 outline-none "
               />
             </div>
             <div className="flex items-center gap-5">
@@ -160,7 +165,7 @@ const EditProfilePage = () => {
         </div>
       </div>
     </div>
-  );
+  ):<LoadingPage />
 };
 
 export default EditProfilePage;

@@ -58,7 +58,7 @@ const ShowStatusPage = () => {
   };
 
   return statusUser && user ? (
-    <div className="relative w-full h-screen bg-zinc-200">
+    <div className="relative w-full h-screen bg-zinc-100">
       <div
         style={{
           background: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4))`,

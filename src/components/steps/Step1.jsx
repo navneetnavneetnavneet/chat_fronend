@@ -1,6 +1,14 @@
 import React from "react";
 
 const Step1 = ({ currentStep, formData, changeHandler, nextStep }) => {
+  // Ensure date value is in YYYY-MM-DD format for input[type="date"]
+  const formatDate = (date) => {
+    if (!date) return "";
+    const d = new Date(date);
+    if (isNaN(d)) return "";
+    return d.toISOString().slice(0, 10);
+  };
+
   return (
     <>
       <h4 className="text-base font-semibold opacity-50 tracking-tight">
@@ -20,7 +28,7 @@ const Step1 = ({ currentStep, formData, changeHandler, nextStep }) => {
         />
         <input
           onChange={changeHandler}
-          value={formData.dateofBirth}
+          value={formatDate(formData.dateOfBirth)}
           type="date"
           name="dateOfBirth"
           placeholder="Date of Birth (DOB)"
@@ -30,7 +38,7 @@ const Step1 = ({ currentStep, formData, changeHandler, nextStep }) => {
           <div className="flex items-center gap-1">
             <input
               onChange={changeHandler}
-              checked={formData.gender === "male" ? true : false}
+              checked={formData.gender === "male"}
               name="gender"
               value="male"
               type="radio"
@@ -40,7 +48,7 @@ const Step1 = ({ currentStep, formData, changeHandler, nextStep }) => {
           <div className="flex items-center gap-1">
             <input
               onChange={changeHandler}
-              checked={formData.gender === "female" ? true : false}
+              checked={formData.gender === "female"}
               name="gender"
               value="female"
               type="radio"
@@ -50,7 +58,7 @@ const Step1 = ({ currentStep, formData, changeHandler, nextStep }) => {
           <div className="flex items-center gap-1">
             <input
               onChange={changeHandler}
-              checked={formData.gender === "other" ? true : false}
+              checked={formData.gender === "other"}
               name="gender"
               value="other"
               type="radio"

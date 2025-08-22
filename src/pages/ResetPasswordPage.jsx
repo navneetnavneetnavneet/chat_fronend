@@ -38,7 +38,7 @@ const ResetPasswordPage = () => {
   };
 
   return (
-    <div className="w-full h-screen bg-zinc-200 px-2 md:px-4">
+    <div className="w-full h-screen bg-zinc-100 px-2 md:px-4">
       <div className="md:w-[50vw] lg:w-[30vw] mx-auto flex flex-col items-center gap-5">
         <div className="w-[6rem] h-[6rem] md:w-[8rem] md:h-[8rem] mt-5 rounded-full border-2 flex items-center justify-center">
           <i className="text-[3rem] ri-lock-line"></i>

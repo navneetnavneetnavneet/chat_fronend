@@ -20,6 +20,7 @@ import ShowStatusPage from "../pages/ShowStatusPage";
 import UploadStatusPage from "../pages/UploadStatusPage";
 import { asyncFetchAllStatus } from "../store/actions/statusActions";
 import { setAllStatus } from "../store/reducers/statusSlice";
+import PageNotFound from "../pages/PageNotFound";
 
 const MainRoutes = () => {
   const navigate = useNavigate();
@@ -69,6 +70,8 @@ const MainRoutes = () => {
         <Route path="/create-group" element={<CreateGroupPage />} />
         <Route path="/status/:userId" element={<ShowStatusPage />} />
         <Route path="/status/upload" element={<UploadStatusPage />} />
+        
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
   );

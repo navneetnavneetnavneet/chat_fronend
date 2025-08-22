@@ -63,7 +63,7 @@ const SideNav = () => {
         <div
           className={`w-full ${
             users.length > 0 ? "h-[60vh]" : ""
-          } z-[999] absolute top-[100%] left-0 bg-zinc-200 overflow-x-hidden overflow-y-auto`}
+          } z-[999] absolute top-[100%] left-0 bg-zinc-100 overflow-x-hidden overflow-y-auto`}
         >
           {!loading ? (
             users.length > 0 &&

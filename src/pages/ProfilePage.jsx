@@ -13,7 +13,7 @@ const ProfilePage = () => {
   const [width, setWidth] = useState(0);
 
   return user ? (
-    <div className="relative w-full h-screen bg-zinc-200 overflow-hidden">
+    <div className="relative w-full h-screen bg-zinc-100 overflow-hidden">
       <div className="w-full h-[10vh] px-2 md:px-4 flex items-center justify-between border-b border-zinc-400">
         <i
           onClick={() => navigate("/")}
@@ -29,7 +29,11 @@ const ProfilePage = () => {
       </div>
       <div className="flex flex-col gap-5 items-center pt-10">
         <div className="w-[6rem] md:w-[8rem] h-[6rem] md:h-[8rem] rounded-full overflow-hidden">
-          <img className="w-full h-full object-cover" src={user.profileImage.url} alt="" />
+          <img
+            className="w-full h-full object-cover"
+            src={user.profileImage.url}
+            alt=""
+          />
         </div>
         <div className="text-center">
           <h1 className="text-[1.5rem] md:text-[1.75rem] lg:text-[2rem] font-semibold tracking-tighter leading-none">
@@ -95,7 +99,7 @@ const ProfilePage = () => {
           </p>
         </Link>
         <Link
-          to="/group-create"
+          to="/create-group"
           className="flex items-center gap-2 border-b border-zinc-400 px-4 py-4"
         >
           <i className="ri-edit-box-line text-lg md:text-xl cursor-pointer"></i>

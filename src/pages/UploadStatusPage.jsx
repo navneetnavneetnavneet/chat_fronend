@@ -28,7 +28,7 @@ const UploadStatusPage = () => {
   };
 
   return user ? (
-    <div className="w-full h-screen bg-zinc-200">
+    <div className="w-full h-screen bg-zinc-100">
       <div className="w-full h-[10vh] px-2 md:px-4 flex items-center justify-between border-b border-zinc-400">
         <i
           onClick={() => navigate(-1)}

@@ -108,13 +108,25 @@ const SignUpPage = () => {
           </p>
         </div>
         <div className="px-2 py-4 flex items-center justify-between">
-          <h1 className="inline-block px-6 md:px-8 py-1 rounded-full bg-blue-300 text-base font-semibold text-white tracking-tight">
+          <h1
+            className={`${
+              currentStep === 1 ? "bg-blue-500" : "bg-blue-300"
+            } inline-block px-6 md:px-8 py-1 rounded-full text-base font-semibold text-white tracking-tight`}
+          >
             Step-1
           </h1>
-          <h1 className="inline-block px-6 md:px-8 py-1 rounded-full bg-blue-300 text-base font-semibold text-white tracking-tight">
+          <h1
+            className={`${
+              currentStep === 2 ? "bg-blue-500" : "bg-blue-300"
+            } inline-block px-6 md:px-8 py-1 rounded-full text-base font-semibold text-white tracking-tight`}
+          >
             Step-2
           </h1>
-          <h1 className="inline-block px-6 md:px-8 py-1 rounded-full bg-blue-300 text-base font-semibold text-white tracking-tight">
+          <h1
+            className={`${
+              currentStep === 3 ? "bg-blue-500" : "bg-blue-300"
+            } inline-block px-6 md:px-8 py-1 rounded-full text-base font-semibold text-white tracking-tight`}
+          >
             Step-3
           </h1>
         </div>

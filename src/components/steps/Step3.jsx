@@ -19,7 +19,7 @@ const Step3 = ({
         <input
           onChange={changeHandler}
           value={formData.otp}
-          type="number"
+          type="text"
           name="otp"
           placeholder="Enter OTP"
           className="w-full px-4 py-2 rounded-md outline-none border border-zinc-400 bg-zinc-100 text-base font-medium"
